@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json /app/
 
-RUN npm ci && npm cache clean --force
+RUN npm i && npm cache clean --force
 
 ADD . /app
 
