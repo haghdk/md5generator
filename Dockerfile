@@ -5,7 +5,6 @@ WORKDIR /app
 RUN apk --no-cache add openssh g++ make python git
 
 COPY package.json /app/
-COPY package.json.lock /app/
 
 RUN npm ci && npm cache clean --force
 
