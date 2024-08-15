@@ -1,16 +1,21 @@
 FROM node:22-alpine
 
+# Step 2: Set the working directory inside the container
 WORKDIR /app
 
-COPY package.json /app/
+# Step 3: Copy package.json and package-lock.json (or yarn.lock) to the working directory
+COPY package*.json ./
 
-RUN npm i && npm cache clean --force
+# Step 4: Install dependencies
+RUN npm install --production
 
-ADD . /app
+# Step 5: Copy the rest of the application code to the working directory
+COPY . .
 
+# Step 6: Build the Nuxt 3 project
 RUN npm run build
 
-ENV HOST 0.0.0.0
+# Step 7: Expose the port that the Nuxt app will run on
 EXPOSE 3002
 
 ENTRYPOINT ["node", ".output/server/index.mjs"]
