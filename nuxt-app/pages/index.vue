@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 // const { data } = await useFetch('/api/hello')
 const inputStringToHash = ref('')
@@ -18,6 +18,10 @@ const generateHash = async() => {
         md5Hash.value = data.value?.hash
     }
 }
+
+useHead({
+  title: 'md5 generator',
+})
 </script>
 
 <template>
