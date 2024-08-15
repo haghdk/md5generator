@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  md5generator:
+    container_name: md5generator
+    build: 
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "3002:3002"
