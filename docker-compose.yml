@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   md5generator:
     container_name: md5generator
