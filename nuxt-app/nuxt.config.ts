@@ -8,4 +8,7 @@ export default defineNuxtConfig({
   imports: {
     autoImport: true, // Ensure this is set to true
   },
+  server: {
+    port: 3002 // Default: 3000
+  }
 })
